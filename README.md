@@ -32,19 +32,24 @@ and use it to replace the supplied DOM element.
 Accepts a DOM element and an optional options object.
 
 Parameters:
-- `element`: Target DOM element
-- `options`: Optional object:
-  - `rows`: Optional positive integer (defaults to 20)
-  - `columns`: Optional positive integer (defaults to 20)
-  - `margin`: Optional margin around cells in percent (defaults to 0.5)
-  - `maxWinners`: Optional positive integer (defaults to 3)
+- `element`: Target DOM element (required)
+- `options`: object (optional):
+  - `rows`: Positive integer (optional - defaults to 20)
+  - `columns`: Positive integer (optional - defaults to 20)
+  - `margin`: Margin around cells in percent (optional - defaults to 0.5)
+  - `maxWinners`: Positive integer (optional - defaults to 3)
 
 
 
 ## Development
 
 ```shell
+$ npm install
+
 $ npm run build
 $ npm run watch
-$ npm run test
+$ npm run clean
+$ npm run disc
+
+$ npm run examples
 ```
