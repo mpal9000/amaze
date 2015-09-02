@@ -2,7 +2,12 @@
   "name": "amaze",
   "version": "0.0.1",
   "description": "Maze solving game",
-  "keywords": [],
+  "keywords": [
+    "game",
+    "maze",
+    "solve",
+    "puzzle"
+  ],
   "author": {
     "name": "Michael Palimetakis",
     "email": "mpal(-at-)mail(-dot-)org"
