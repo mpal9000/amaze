@@ -1,7 +1,7 @@
 {
   "name": "amaze",
   "version": "0.0.1",
-  "description": "",
+  "description": "Maze solving game",
   "keywords": [],
   "author": {
     "name": "Michael Palimetakis",
@@ -14,8 +14,7 @@
   "main": "./lib/index.js",
   "browser": "./dist/amaze.js",
   "directories": {
-    "lib": "./lib",
-    "doc": "./doc"
+    "lib": "./lib"
   },
   "config": {
     "babel_src": "./src",
