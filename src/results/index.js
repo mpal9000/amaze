@@ -7,13 +7,10 @@ import map from 'ramda/src/map';
 import addIndex from 'ramda/src/addIndex';
 import partial from 'ramda/src/partial';
 import hg, { h } from 'mercury';
-import dbg from 'debug';
 
 import Scrollable from '../scrollable';
 
 const mapIndexed = addIndex(map);
-
-const debug = dbg('amaze:results');
 
 /**
  * Component
@@ -43,9 +40,7 @@ function getResults(props) {
  */
 
 Results.render = function render(props) {
-  debug('render()');
   const results = getResults(props);
-  debug('render() :: results:', results);
 
   return h(
     'section.amaze-Results',

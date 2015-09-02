@@ -4,11 +4,8 @@
 
 import hg, { h } from 'mercury';
 import cx from 'classnames';
-import dbg from 'debug';
 
 import { sendTapStart, sendTapEnd, sendTapCancel } from '../gestures';
-
-const debug = dbg('amaze:button');
 
 /**
  * Component
@@ -26,7 +23,6 @@ export default function Button() {
  */
 
 Button.render = function render(state, props = {}) {
-  debug('render()');
   const {
     ['ev-event']: evEvent,
     ['ev-click']: evClick,

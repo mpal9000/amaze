@@ -9,11 +9,8 @@ import partial from 'ramda/src/partial';
 import keys from 'ramda/src/keys';
 import pickBy from 'ramda/src/pickBy';
 import hg from 'mercury';
-import dbg from 'debug';
 
 import { randomIntFromRange, randomRgbColor } from '../util';
-
-const debug = dbg('amaze:bot');
 
 /**
  *
@@ -39,23 +36,10 @@ export default function Bot(rows, columns, isCellEnabled, spec) {
   });
 
   function isValidIndex(totalIndexes, prevIndex, index, nextIndex) {
-    debug('isValidIndex() :: --------');
-    debug('isValidIndex() :: totalIndexes:', totalIndexes);
-    debug('isValidIndex() :: prevIndex:', prevIndex);
-    debug('isValidIndex() :: index:', index);
-    debug('isValidIndex() :: nextIndex:', nextIndex);
-    debug('isValidIndex() :: isBoundary(totalCells, columns, index):', isBoundary(totalCells, columns, index));
     if (nextIndex === prevIndex) {
-      /*if (totalIndexes > 1
-          && !isBoundary(totalCells, columns, index)) { // TODO: Fix this
-        return false;
-      }*/
-
-      if (totalIndexes > 1/*
-          && !isBoundary(totalCells, columns, index)*/) { // TODO: Fix this
+      if (totalIndexes > 1) {
         return false;
       }
-
     }
 
     return true;
