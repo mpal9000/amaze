@@ -33,16 +33,18 @@ Accepts a DOM element and an optional options object.
 
 Parameters:
 - `element`: Target DOM element
-- `options`: Optional object with properties (all optional):
-  - `rows`: Positive integer (defaults to 20)
-  - `columns`: Positive integer (defaults to 20)
-  - `margin`: Percent number value (defaults to 0.5)
-  - `maxWinners`: Positive integer (defaults to 3)
+- `options`: Optional object:
+  - `rows`: Optional positive integer (defaults to 20)
+  - `columns`: Optional positive integer (defaults to 20)
+  - `margin`: Optional margin around cells in percent (defaults to 0.5)
+  - `maxWinners`: Optional positive integer (defaults to 3)
 
 
 
 ## Development
 
+```shell
 $ npm run build
 $ npm run watch
 $ npm run test
+```
