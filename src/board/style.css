@@ -1,0 +1,15 @@
+.amaze-Board {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  border: 3px solid var(--amaze-color-secondary);
+  background-color: var(--amaze-color-main30);
+}
+
+.amaze-Board-content {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--amaze-color-main);
+}

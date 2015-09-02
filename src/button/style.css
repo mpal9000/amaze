@@ -1,0 +1,62 @@
+:root {
+  --amaze-Button-color--focus: color(var(--amaze-color-secondary) contrast());
+  --amaze-Button-color--disabled: color(var(--amaze-color-main20) tint(45%));
+
+  --amaze-Tile-backgroundColor--start: color(color(var(--amaze-color-main40) saturation(30%)) green(255));
+  --amaze-Tile-backgroundColor--pause: color(color(var(--amaze-color-main40) saturation(30%)) red(255));
+}
+
+.amaze-Button {
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+  min-width: 5.14em;
+  padding: 0.7em 0.7em;
+  margin: 0 0.29em;
+  font: inherit;
+  color: var(--amaze-color-secondary);
+  text-align: center;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 3px;
+  outline-width: 0;
+  background: transparent;
+  box-shadow: var(--amaze-boxShadow--2dp);
+  transition: box-shadow var(--amaze-transition--generic);
+  user-select: none;
+  cursor: pointer;
+  z-index: 0;
+}
+
+/*TODO: Rename "start" to something generic*/
+.amaze-Button--start {
+  background-color: var(--amaze-Tile-backgroundColor--start);
+}
+
+/*TODO: Rename "pause" to something generic*/
+.amaze-Button--pause {
+  background-color: var(--amaze-Tile-backgroundColor--pause);
+}
+
+.amaze-Button:focus {
+  color: var(--amaze-Button-color--focus);
+  border: 0;
+  outline: none;
+}
+
+.amaze-Button:active,
+.amaze-Button--active {
+  font-weight: normal;
+  color: var(--amaze-color-secondary);
+  border: 0;
+  background-color: var(--amaze-color-main);
+  box-shadow: var(--amaze-boxShadow--6dp);
+}
+
+.amaze-Button[disabled] {
+  color: var(--amaze-Button-color--disabled);
+  background: var(--amaze-color-main20);
+  box-shadow: none;
+  cursor: auto;
+  pointer-events: none;
+}

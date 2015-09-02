@@ -1,0 +1,5 @@
+.amaze-App {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'Roboto', sans-serif; /*TODO: Get this from a global variable*/
+}

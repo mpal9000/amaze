@@ -1,0 +1,46 @@
+.amaze-BotHandle {
+  display: inline-block;
+  float: left;
+  box-sizing: border-box;
+}
+
+.amaze-BotHandle-draggable {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 2.586em;
+  height: 2.586em;
+  padding: 0.7em 0.7em;
+  margin: 0 0.29em;
+  color: var(--amaze-color-secondary);
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: var(--amaze-boxShadow--3dp);
+}
+
+.amaze-BotHandle-draggable[draggable] {
+  user-select: none;
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+  user-drag: element;
+  cursor: grab; /*TODO: Handle also "grabbing" cursor*/
+  /*cursor: move;*/ /*TODO: Consider to use this instead*/
+}
+
+.amaze-BotHandle-draggable--disabled,
+.amaze-BotHandle-draggable--dragged {
+  opacity: 0.4;
+}
+
+@media (min-width: 19rem) {
+  .amaze-BotHandle {
+    float: right;
+    clear: right;
+  }
+}
+
+@media (min-width: 35rem) {
+  .amaze-BotHandle {
+    float: left;
+    clear: none;
+  }
+}

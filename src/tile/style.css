@@ -1,0 +1,39 @@
+:root {
+  --amaze-Tile-backgroundColor--entry: color(color(var(--amaze-color-main40) saturation(30%)) green(255));
+  --amaze-Tile-backgroundColor--exit: color(color(var(--amaze-color-main40) saturation(30%)) red(255));
+}
+
+.amaze-Tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem;
+  border: 1px solid var(--amaze-color-main40);
+  border-radius: 3px;
+  transition: background-color var(--amaze-transition--generic), box-shadow var(--amaze-transition--generic);
+  cursor: pointer;
+}
+
+.amaze-Tile--active {
+  background-color: var(--amaze-color-main40);
+  box-shadow: var(--amaze-boxShadow--2dp);
+}
+
+.amaze-Tile--entry {
+  background-color: var(--amaze-Tile-backgroundColor--entry);
+}
+
+.amaze-Tile--exit {
+  background-color: var(--amaze-Tile-backgroundColor--exit);
+}
+
+.amaze-Tile--hasBotIndicators {
+  background-color: var(--amaze-color-main40);
+}
+
+.amaze-Tile--dragHovered {
+  border: 0.2rem dashed var(--amaze-color-secondary);
+}

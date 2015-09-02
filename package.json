@@ -1,0 +1,97 @@
+{
+  "name": "amaze",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": [],
+  "author": {
+    "name": "Michael Palimetakis",
+    "email": "mpal(-at-)mail(-dot-)org"
+  },
+  "license": "MIT",
+  "bugs": {
+    "email": "mpal(-at-)mail(-dot-)org"
+  },
+  "main": "./lib/index.js",
+  "browser": "./dist/amaze.js",
+  "directories": {
+    "lib": "./lib",
+    "doc": "./doc"
+  },
+  "config": {
+    "babel_src": "./src",
+    "babel_dest": "./lib",
+    "babel_clean": "./lib/*.js",
+    "browserify_src": "./src/index.js",
+    "browserify_dest": "./dist/amaze.js",
+    "browserify_dest_min": "./dist/amaze.min.js",
+    "cssnext_src": "./src/style.css",
+    "cssnext_dest": "./dist/amaze.css"
+  },
+  "scripts": {
+    "babel": "babel $npm_package_config_babel_src -d $npm_package_config_babel_dest -s",
+    "babel:clean": "rimraf $npm_package_config_babel_clean && echo \"cleaned ${npm_package_config_babel_clean}\"",
+    "browserify:bare": "browserify $npm_package_config_browserify_src -o $npm_package_config_browserify_dest --standalone amaze -t babelify -d",
+    "browserify": "mkdirp ./dist/ && npm run browserify:bare -s && echo \"created ${npm_package_config_browserify_dest}\"",
+    "browserify:fullpaths": "mkdirp ./dist/ && npm run browserify:bare -s -- --full-paths && echo \"created ${npm_package_config_browserify_dest}\"",
+    "browserify:clean": "rimraf $npm_package_config_browserify_dest && echo \"cleaned ${npm_package_config_browserify_dest}\"",
+    "watchify": "watchify $npm_package_config_browserify_src -o $npm_package_config_browserify_dest --standalone amaze -t babelify -d -v",
+    "watchify:clean": "npm run browserify:clean -s",
+    "js:build:node": "npm run babel:clean -s && npm run babel -s",
+    "js:build:browser": "npm run browserify:clean -s && npm run browserify -s && uglifyjs $npm_package_config_browserify_dest -c -m -o $npm_package_config_browserify_dest_min",
+    "js:build:browser:fullpaths": "npm run browserify:clean -s && npm run browserify:fullpaths -s",
+    "js:watch:node": "npm run babel:clean -s && npm run babel -s -- -w",
+    "js:watch:browser": "npm run watchify:clean -s && npm run watchify -s",
+    "js:clean:node": "npm run babel:clean -s",
+    "js:clean:browser": "npm run browserify:clean -s",
+    "cssnext": "cssnext -s -v $npm_package_config_cssnext_src $npm_package_config_cssnext_dest",
+    "cssnext:clean": "rimraf $npm_package_config_cssnext_dest && echo \"cleaned ${npm_package_config_cssnext_dest}\"",
+    "css:build": "npm run cssnext:clean -s && npm run cssnext -s",
+    "css:watch": "npm run cssnext:clean -s && npm run cssnext -s -- -w",
+    "css:clean": "npm run cssnext:clean -s",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parallelshell 'npm run js:build:node -s' 'npm run js:build:browser -s' 'npm run css:build -s'",
+    "watch": "parallelshell 'npm run js:watch:node -s' 'npm run js:watch:browser -s' 'npm run css:watch -s'",
+    "clean": "parallelshell 'npm run js:clean:node -s' 'npm run js:clean:browser -s' 'npm run css:clean -s'",
+    "disc": "npm run js:build:browser:fullpaths -s && mkdirp ./.tmp/ && discify $npm_package_config_browserify_dest > ./.tmp/disc.html && opener ./.tmp/disc.html",
+    "examples:browser": "npm run js:build:browser -s && opener ./examples/index.html",
+    "examples": "npm run examples:browser -s"
+  },
+  "private": true,
+  "engines": {
+    "iojs": ">=2.0.2",
+    "npm": "~2.9.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^5.8.20",
+    "classnames": "^2.1.3",
+    "debug": "^2.2.0",
+    "duration-js": "^3.3.4",
+    "iscroll": "^5.1.3",
+    "mainloop.js": "^1.0.1",
+    "memoizee": "^0.3.9",
+    "raf": "^3.1.0",
+    "ramda": "^0.17.1",
+    "uuid": "^2.0.1",
+    "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^5.2.0",
+    "babel": "^5.8.21",
+    "babel-eslint": "^4.0.10",
+    "babelify": "^6.1.3",
+    "browserify": "^11.0.1",
+    "cssnext": "^1.8.3",
+    "disc": "^1.3.2",
+    "envify": "^3.4.0",
+    "eslint": "^1.1.0",
+    "eslint-plugin-babel": "^2.1.1",
+    "hashmark": "^3.0.0",
+    "mkdirp": "^0.5.1",
+    "opener": "^1.4.1",
+    "parallelshell": "^2.0.0",
+    "posix-echo": "^1.0.0",
+    "rimraf": "^2.4.2",
+    "uglify-js": "^2.4.24",
+    "watchify": "^3.3.1"
+  }
+}

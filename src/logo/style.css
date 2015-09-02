@@ -1,0 +1,16 @@
+.amaze-Logo {
+  display: inline-block;
+  float: right;
+  box-sizing: border-box;
+  margin: 6px;
+  color: var(--amaze-color-secondary);
+  user-select: none;
+}
+
+.amaze-Logo > span:first-child {
+  color: var(--amaze-color-main10)
+}
+
+.amaze-Logo > span:nth-child(n+2) {
+  font-size: 1.2em;
+}
