@@ -25,7 +25,7 @@ amaze(element, options);
 
 ## API
 
-### amaze(element, options)
+### amaze(element, [options])
 
 Create a new game board in vitual-dom
 and use it to replace the supplied DOM element.
