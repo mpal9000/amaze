@@ -23,7 +23,7 @@ export default function amaze(root, opts = {}) {
   function redo() { return history.redo(); }
 
   // Create a rendering cycle for the app vtree
-  app(null, state, App.render, {
+  app(document.body, state, App.render, {
     initialTree: virtualize(root),
     target: root,
   });

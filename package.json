@@ -72,9 +72,11 @@
     "iscroll": "^5.1.3",
     "mainloop.js": "^1.0.1",
     "memoizee": "^0.3.9",
+    "mercury": "mpal9000/mercury",
     "raf": "^3.1.0",
     "ramda": "^0.17.1",
     "uuid": "^2.0.1",
+    "vdom-virtualize": "0.0.12",
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
