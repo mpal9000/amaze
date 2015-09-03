@@ -99,7 +99,6 @@ export default function App(opts) {
   }
 
   function start(cb) {
-    console.log('start()');
     setImmediate(() => {
       const disableDragEvents = state.disableDragEvents();
       disableDragEvents();
