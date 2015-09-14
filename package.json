@@ -11,7 +11,7 @@
     "virtual-dom"
   ],
   "author": {
-    "name": "Michael Palimetakis",
+    "name": "Michael Palimetakis"
   },
   "license": "MIT",
   "main": "./lib/index.js",
